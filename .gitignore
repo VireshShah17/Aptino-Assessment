@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+venv/
+
+
+# IDE and Editor settings
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+

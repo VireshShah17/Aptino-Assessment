@@ -1,0 +1,178 @@
+[
+    {
+        "case_id": "PUB-001",
+        "expected_task": "Determine whether the hospitalization is admissible, identify applicable policy limits, and explain any deductions.",
+        "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 72.89,
+        "citations_count": 6,
+        "key_findings": [
+            "The claim for inpatient treatment of acute appendicitis is admissible as the 30-day general waiting period has been served through 14 months of continuous coverage.",
+            "The condition is not pre-existing and is not subject to any specific disease waiting periods.",
+            "Room expenses claimed (30,000 INR) exceed the policy sub-limit of 1.0% of the Basic Sum Insured and will be capped.",
+            "Ambulance charges claimed (1,200 INR) exceed the policy limit of Rs. 1000 and will be capped.",
+            "Doctor fees (30,000 INR) and medicines/diagnostics (90,000 INR) are within their respective sub-limits of 25% and 40% of the Sum Insured.",
+            "Pre-hospitalization and post-hospitalization expenses are covered as they fall within the 30-day and 60-day limits respectively."
+        ]
+    },
+    {
+        "case_id": "PUB-002",
+        "expected_task": "Determine whether the claim falls within the initial waiting period and what the appropriate decision should be.",
+        "actual_decision": "NOT_ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 34.41,
+        "citations_count": 1,
+        "key_findings": [
+            "The claim for viral fever occurred on January 20, 2026, which is within 30 days of the policy start date of January 1, 2026.",
+            "The insured has 0 months of continuous coverage and no prior continuous coverage, meaning the 30-day waiting period applies to this illness.",
+            "Due to the 30-day waiting period, the claim is inadmissible."
+        ]
+    },
+    {
+        "case_id": "PUB-003",
+        "expected_task": "Assess the claim considering the policy's pre-existing disease waiting-period provisions.",
+        "actual_decision": "NOT_ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 42.09,
+        "citations_count": 1,
+        "key_findings": [
+            "The claim is for a pre-existing thyroid disorder.",
+            "The policy specifies a 48-month waiting period for pre-existing diseases.",
+            "The patient has only 27 months of continuous coverage, which does not satisfy the 48-month waiting period requirement, rendering the claim excluded."
+        ]
+    },
+    {
+        "case_id": "PUB-004",
+        "expected_task": "Determine whether the domiciliary treatment satisfies the policy conditions and identify the applicable sub-limit.",
+        "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 47.92,
+        "citations_count": 4,
+        "key_findings": [
+            "The claim qualifies for Domiciliary Treatment as the patient received treatment at home due to the non-availability of a hospital room.",
+            "The claimed doctor fees (25,000 INR) are within the 25% sub-limit of the Sum Insured.",
+            "The claimed medicines and diagnostics (80,000 INR) are within the 40% sub-limit of the Sum Insured.",
+            "The total claimed amount is 105,000 INR, which exceeds the maximum aggregate sub-limit for Domiciliary Hospitalization (20% of the Basic Sum Insured, or 100,000 INR). Therefore, the payable amount is capped at 100,000 INR."
+        ]
+    },
+    {
+        "case_id": "PUB-005",
+        "expected_task": "Determine whether the less-than-24-hour treatment can qualify as a covered hospitalization/day-care claim.",
+        "actual_decision": "ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 52.54,
+        "citations_count": 5,
+        "key_findings": [
+            "The 24-hour minimum hospitalization requirement is waived for Eye Surgery, qualifying the 8-hour treatment as a covered day-care procedure.",
+            "The 1-year waiting period for Cataract treatment has been satisfied, as the patient has 29 months of continuous coverage.",
+            "The claimed expenses for doctor fees and medicines/diagnostics fall well within the policy's specified sub-limits."
+        ]
+    },
+    {
+        "case_id": "PUB-006",
+        "expected_task": "Assess admissibility and identify what additional evidence is required before a final decision.",
+        "actual_decision": "NEEDS_REVIEW",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 56.42,
+        "citations_count": 5,
+        "key_findings": [
+            "The inpatient treatment for an acute infection is generally covered, as the 30-day waiting period has been satisfied by the 30 months of continuous coverage.",
+            "The claim lacks evidence confirming that the hospital is registered or meets the minimum criteria required by the policy.",
+            "The claim lacks evidence confirming that the treatment was medically necessary.",
+            "Sub-limits apply to room rent, doctor fees, and medicines/diagnostics."
+        ]
+    },
+    {
+        "case_id": "PUB-007",
+        "expected_task": "Assess the claim and apply the policy's category-specific limits rather than assuming the full bill is payable.",
+        "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 71.08,
+        "citations_count": 5,
+        "key_findings": [
+            "Inpatient treatment for Cancer is covered under the policy.",
+            "The policyholder has 31 months of continuous coverage, which satisfies the 30-day initial waiting period and the 1-year waiting period for specific diseases.",
+            "The condition is not pre-existing.",
+            "Sub-limits apply to room rent, doctor fees, medicines/diagnostics, and ambulance charges based on the Basic Sum Insured of 1,000,000 INR."
+        ]
+    },
+    {
+        "case_id": "PUB-008",
+        "expected_task": "Determine whether the treatment falls within the policy's covered scope or an exclusion.",
+        "actual_decision": "NOT_ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 31.63,
+        "citations_count": 1,
+        "key_findings": [
+            "The patient underwent cosmetic surgery for a cosmetic condition.",
+            "The policy explicitly excludes cosmetic or aesthetic treatment of any description under Exclusion 5.",
+            "As the treatment is strictly cosmetic and not related to an injury or disease, the claim is not covered."
+        ]
+    },
+    {
+        "case_id": "PUB-009",
+        "expected_task": "Assess the claim and verify the policy time windows for pre-hospitalization and post-hospitalization expenses.",
+        "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 59.3,
+        "citations_count": 6,
+        "key_findings": [
+            "The claim for Acute appendicitis is covered as the 30-day waiting period is waived due to 32 months of continuous coverage.",
+            "Pre-hospitalization and post-hospitalization expenses fall within the allowed 30 and 60-day periods.",
+            "Room expenses of 15,000 INR exceed the 1.0% of Basic Sum Insured limit (5,000 INR) and will be capped.",
+            "Doctor fees, medicines/diagnostics, and ambulance charges are within their respective sub-limits."
+        ]
+    },
+    {
+        "case_id": "PUB-010",
+        "expected_task": "Assess the claim considering continuous prior coverage with another Indian insurer and the waiting-period reduction rules.",
+        "actual_decision": "ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 71.91,
+        "citations_count": 4,
+        "key_findings": [
+            "The 1-year waiting period for Cataract is waived because the insured had 1 year of continuous coverage under a prior Indian individual health insurance policy and the claim history was received.",
+            "Eye surgery is explicitly covered as a day care procedure, waiving the 24-hour hospitalization requirement.",
+            "The claimed expenses for doctor fees (20,000 INR) and medicines/diagnostics (60,000 INR) fall well within the specified sub-limits of 25% and 40% of the Sum Insured, respectively."
+        ]
+    },
+    {
+        "case_id": "PUB-011",
+        "expected_task": "Determine whether the claim can be finally decided when the supplied evidence does not establish that the facility meets the policy definition of a Hospital.",
+        "actual_decision": "NEEDS_REVIEW",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 55.87,
+        "citations_count": 3,
+        "key_findings": [
+            "The patient was treated for acute appendicitis with an appendectomy, which is a covered condition.",
+            "The treatment was provided at 'Unknown Care Facility', but there is no documentation to confirm if this facility is registered with local authorities or meets the minimum criteria to be considered a Hospital under the policy.",
+            "Further review is required to verify the facility's status before the claim can be processed."
+        ]
+    },
+    {
+        "case_id": "PUB-012",
+        "expected_task": "Determine whether the treatment is excluded because it is experimental or unproven.",
+        "actual_decision": "NEEDS_REVIEW",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 44.24,
+        "citations_count": 2,
+        "key_findings": [
+            "The policy defines 'Unproven/Experimental Treatment' as treatment not based on established medical practice in India.",
+            "The policy requires treatments to be 'Medically Necessary', which means they must conform to professional standards widely accepted in international medical practice or by the medical community in India.",
+            "Exclusion 14 excludes treatments not approved by the Indian Medical Council.",
+            "Despite these definitions and related exclusions, an explicit exclusion clause specifically stating that 'Unproven/Experimental Treatment' is excluded is missing from the provided evidence, necessitating a manual review."
+        ]
+    }
+]

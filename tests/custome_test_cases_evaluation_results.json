@@ -1,0 +1,72 @@
+[
+    {
+        "case_id": "CUST-001",
+        "expected_task": "Evaluate if cosmetic surgery is covered when not related to an accident.",
+        "actual_decision": "NOT_ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 31.85,
+        "citations_count": 1,
+        "key_findings": [
+            "The claim is for Cosmetic Rhinoplasty to treat an aesthetic nasal deviation.",
+            "The policy explicitly excludes cosmetic or aesthetic treatment of any description, as well as plastic surgery not related to the treatment of an Injury or Disease."
+        ]
+    },
+    {
+        "case_id": "CUST-002",
+        "expected_task": "Test the strict application of the 30-day initial waiting period for non-emergency illnesses.",
+        "actual_decision": "NOT_ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 41.78,
+        "citations_count": 1,
+        "key_findings": [
+            "The policy inception date is 2026-01-01 and the claim date is 2026-01-15, which is only 14 days after the policy started.",
+            "The policy enforces a strict 30-day initial waiting period for all claims, except in cases of continuous prior coverage which is not indicated here.",
+            "Because the hospitalization for Viral Fever occurred within the first 30 days of the policy, the claim is not covered."
+        ]
+    },
+    {
+        "case_id": "CUST-003",
+        "expected_task": "Evaluate admissible surgery but apply specific sub-limits (e.g., Cataract limits).",
+        "actual_decision": "ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 42.02,
+        "citations_count": 3,
+        "key_findings": [
+            "The claim is for Cataract surgery, which has a 1-year waiting period under the policy.",
+            "The insured has 37 months of continuous coverage, which satisfies the 1-year waiting period requirement for Cataract.",
+            "The claimed doctor fees of 35,000 INR fall well within the 25% sub-limit (100,000 INR) of the 400,000 INR Sum Insured.",
+            "The claimed medicines and diagnostics expenses of 15,000 INR fall well within the 40% sub-limit (160,000 INR) of the Sum Insured.",
+            "The total claimed amount of 50,000 INR is fully covered and admissible."
+        ]
+    },
+    {
+        "case_id": "CUST-004",
+        "expected_task": "Determine if claim can be processed without a Medico-Legal Certificate (MLC) or FIR for an accident.",
+        "actual_decision": "NEEDS_REVIEW",
+        "confidence": 1.0,
+        "validation_status": "FAIL",
+        "elapsed_time_sec": 28.32,
+        "citations_count": 0,
+        "key_findings": [
+            "The provided policy evidence does not contain any information regarding the requirement of a Medico-Legal Certificate (MLC) or First Information Report (FIR) for accident-related claims.",
+            "It is impossible to determine if the claim can be processed without these documents based solely on the provided text."
+        ]
+    },
+    {
+        "case_id": "CUST-005",
+        "expected_task": "Test the 48-month pre-existing disease waiting period rule.",
+        "actual_decision": "NOT_ADMISSIBLE",
+        "confidence": 1.0,
+        "validation_status": "PASS",
+        "elapsed_time_sec": 44.85,
+        "citations_count": 2,
+        "key_findings": [
+            "The claim is for Chronic Asthma, which is a declared pre-existing disease.",
+            "The policy specifies a 48-month waiting period for pre-existing diseases, and only 22 months of continuous coverage have elapsed.",
+            "Asthma is explicitly listed under the policy's general exclusions (Exclusion 20)."
+        ]
+    }
+]

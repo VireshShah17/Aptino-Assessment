@@ -1,0 +1,105 @@
+[
+  {
+    "case_id": "CUST-001",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2025-01-01",
+    "claim_date": "2026-05-10",
+    "sum_insured_inr": 500000,
+    "treatment": {
+      "type": "inpatient",
+      "diagnosis": "Nasal deviation (Aesthetic)",
+      "procedure": "Cosmetic Rhinoplasty",
+      "pre_existing": false,
+      "accident_related": false
+    },
+    "expenses_inr": {
+      "room": 15000,
+      "doctor_fees": 80000,
+      "medicines_diagnostics": 10000
+    },
+    "task": "Evaluate if cosmetic surgery is covered when not related to an accident."
+  },
+  {
+    "case_id": "CUST-002",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2026-01-01",
+    "claim_date": "2026-01-15",
+    "sum_insured_inr": 300000,
+    "treatment": {
+      "type": "inpatient",
+      "diagnosis": "Viral Fever",
+      "procedure": "Observation and IV fluids",
+      "pre_existing": false
+    },
+    "expenses_inr": {
+      "room": 10000,
+      "doctor_fees": 5000,
+      "medicines_diagnostics": 8000
+    },
+    "task": "Test the strict application of the 30-day initial waiting period for non-emergency illnesses."
+  },
+  {
+    "case_id": "CUST-003",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2023-01-01",
+    "claim_date": "2026-02-20",
+    "sum_insured_inr": 400000,
+    "continuous_coverage_months": 37,
+    "treatment": {
+      "type": "inpatient",
+      "diagnosis": "Cataract (Right Eye)",
+      "procedure": "Cataract Extraction with IOL",
+      "pre_existing": false
+    },
+    "expenses_inr": {
+      "room": 0,
+      "doctor_fees": 35000,
+      "medicines_diagnostics": 15000
+    },
+    "task": "Evaluate admissible surgery but apply specific sub-limits (e.g., Cataract limits)."
+  },
+  {
+    "case_id": "CUST-004",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-08-11",
+    "sum_insured_inr": 500000,
+    "treatment": {
+      "type": "inpatient",
+      "diagnosis": "Fractured Femur",
+      "procedure": "ORIF Surgery",
+      "pre_existing": false,
+      "accident_related": true
+    },
+    "expenses_inr": {
+      "room": 40000,
+      "doctor_fees": 60000,
+      "medicines_diagnostics": 30000
+    },
+    "documents": [
+      "discharge_summary",
+      "itemized_bill"
+    ],
+    "task": "Determine if claim can be processed without a Medico-Legal Certificate (MLC) or FIR for an accident."
+  },
+  {
+    "case_id": "CUST-005",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2025-01-01",
+    "claim_date": "2026-11-01",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 22,
+    "treatment": {
+      "type": "inpatient",
+      "diagnosis": "Chronic Asthma (Declared at inception)",
+      "procedure": "Respiratory Management",
+      "pre_existing": true
+    },
+    "expenses_inr": {
+      "room": 20000,
+      "doctor_fees": 15000,
+      "medicines_diagnostics": 25000
+    },
+    "task": "Test the 48-month pre-existing disease waiting period rule."
+  }
+]
