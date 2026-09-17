@@ -5,6 +5,9 @@ from pydantic import BaseModel, Field
 class Citation(BaseModel):
     chunk_id: str = Field(description = "The ID of the policy evidence chunk that supports the claim.")
     claim: str = Field(description = "The specific claim being supported by this citation.")
+    source: str = Field(default = "USGIC Policy Wording", description = "Source document name")
+    section: str = Field(default = "Coverage Section", description = "Policy section or heading")
+    page: int = Field(default = 0, description = "Page number or 0 if unknown")
 
 
 class AnalysisOutput(BaseModel):
