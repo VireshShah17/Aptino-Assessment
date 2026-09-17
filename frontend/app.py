@@ -2,14 +2,19 @@ import json
 import time
 import requests
 import streamlit as st
+import os
 
 
 # Configure page settings
 st.set_page_config(page_title = "Aptino Claim Engine", page_icon = "🏥", layout = "wide")
 
-# API Endpoint
-BASE_API_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
-API_URL = f"{BASE_API_URL}/analyze"
+# Retrieve the backend URL from Streamlit Secrets, environment variables, or local default
+if "BACKEND_URL" in st.secrets:
+    BASE_API_URL = st.secrets["BACKEND_URL"]
+else:
+    BASE_API_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+
+API_URL = f"{BASE_API_URL.rstrip('/')}/analyze"
 
 # Default test payload (PUB-001)
 DEFAULT_PAYLOAD = {
